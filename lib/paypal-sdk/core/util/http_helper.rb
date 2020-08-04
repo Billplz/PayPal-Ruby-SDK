@@ -41,7 +41,6 @@ module PayPal::SDK::Core
       def configure_ssl(http)
         http.tap do |https|
           https.use_ssl = true
-          https.ca_file = default_ca_file
           https.verify_mode = OpenSSL::SSL::VERIFY_PEER
           begin
             https.ssl_version = :TLSv1_2
